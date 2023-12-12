@@ -1,1 +1,129 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
+USE `mydb` ;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Albumes`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Albumes` (
+  `id_Albumes` INT NOT NULL,
+  `Titulo_Album` VARCHAR(45) NOT NULL,
+  `Año_Lanzamiento` VARCHAR(45) NOT NULL,
+  `id_Artista` VARCHAR(45) NOT NULL,
+  `Precio_Disco` DOUBLE NOT NULL,
+  PRIMARY KEY (`id_Albumes`),
+  INDEX `id_Artista_idx` (`id_Artista` ASC) VISIBLE,
+  CONSTRAINT `id_Artista`
+    FOREIGN KEY (`id_Artista`)
+    REFERENCES `mydb`.`Artistas` (`id_Artista`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Canciones`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Canciones` (
+  `id_Canciones` INT NOT NULL,
+  `Nombre_Cancion` VARCHAR(45) NOT NULL,
+  `Duracion` VARCHAR(45) NOT NULL,
+  `id_Album` INT NOT NULL,
+  PRIMARY KEY (`id_Canciones`),
+  INDEX `id_Album_idx` (`id_Album` ASC) VISIBLE,
+  CONSTRAINT `id_Album`
+    FOREIGN KEY (`id_Album`)
+    REFERENCES `mydb`.`Albumes` (`id_Albumes`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Artistas`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Artistas` (
+  `id_Artista` VARCHAR(45) NOT NULL,
+  `Nombre_Artista` VARCHAR(45) NOT NULL,
+  `Genero_Musical` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_Artista`),
+  CONSTRAINT `id_Artista`
+    FOREIGN KEY ()
+    REFERENCES `mydb`.`Albumes` ()
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `id_Albumes`
+    FOREIGN KEY ()
+    REFERENCES `mydb`.`Canciones` ()
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Usuarios`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Usuarios` (
+  `id_Usuarios` VARCHAR(45) NOT NULL,
+  `Nivel` INT NOT NULL,
+  `Password` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_Usuarios`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Permisos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Permisos` (
+  `id_Nivel` INT NOT NULL,
+  `Permiso` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_Nivel`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Ventas`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Ventas` (
+  `id_Venta` INT NOT NULL,
+  `id_Album` INT NOT NULL,
+  `id_Usuarios` VARCHAR(45) NOT NULL,
+  `id_Nivel` INT NOT NULL,
+  PRIMARY KEY (`id_Venta`),
+  INDEX `id_Album_idx` (`id_Album` ASC) VISIBLE,
+  INDEX `id_Usuarios_idx` (`id_Usuarios` ASC) VISIBLE,
+  INDEX `id_Nivel_idx` (`id_Nivel` ASC) VISIBLE,
+  CONSTRAINT `id_Album`
+    FOREIGN KEY (`id_Album`)
+    REFERENCES `mydb`.`Albumes` (`id_Albumes`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `id_Usuarios`
+    FOREIGN KEY (`id_Usuarios`)
+    REFERENCES `mydb`.`Usuarios` (`id_Usuarios`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `id_Nivel`
+    FOREIGN KEY (`id_Nivel`)
+    REFERENCES `mydb`.`Permisos` (`id_Nivel`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
