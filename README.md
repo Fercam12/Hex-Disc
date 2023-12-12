@@ -8,7 +8,6 @@ Para realizar este proyecto seran necesarios los siguientes requerimientos
 - 70 registros por cada tabla requerida (exceptuando las que manejen registros de trafico)            
 - Una conexion con Java
 - Uso de procedimientos almacenados
-![retor_escolares_conbocadillo](https://github.com/Fercam12/Hex-Disc/assets/123578835/9d03dc97-bc53-45b1-9148-b6eb52e5da76)
 
 ## Requisitos del Sistema 💻
 - SGBD: MySQL
