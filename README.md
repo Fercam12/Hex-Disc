@@ -20,9 +20,9 @@ Para realizar este proyecto seran necesarios los siguientes requerimientos
 - Paola Michelle Aranda Esquivel 👩‍💻
 
 
-
 ![Imagen de WhatsApp 2023-12-11 a las 22 18 24_90f04089](https://github.com/Fercam12/Hex-Disc/assets/123578835/22170668-8e6b-4778-82d0-04dfdd47a8ee)
 
+![Imagen de WhatsApp 2023-12-11 a las 22 18 41_510d4319](https://github.com/Fercam12/Hex-Disc/assets/123578835/75832633-1244-4df0-a1e6-374309568ebd)
 
 
 
