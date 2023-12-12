@@ -1,4 +1,4 @@
-# de Gestión de Base de Datos para Tienda de Discos
+# Sistema de Gestión de Base de Datos para Tienda de Discos
 
 Este proyecto es un Sistema de Gestión de Base de Datos (SGBD) diseñado específicamente para una tienda de discos. El objetivo principal es gestionar de manera eficiente la información relacionada con el inventario de discos, clientes, ventas y empleados.
 
