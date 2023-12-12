@@ -18,6 +18,8 @@ Para realizar este proyecto seran necesarios los siguientes requerimientos
 - Grover Fernando Campos Medrano 🧑‍💻
 - Gerardo Vianney Garrido Ewald 🧑‍💻
 - Paola Michelle Aranda Esquivel 👩‍💻
+  
+![giphy](https://github.com/Fercam12/Hex-Disc/assets/123578835/5bcbdcbc-9517-4c56-ab1a-251c7fd76efe)
 
 
 
