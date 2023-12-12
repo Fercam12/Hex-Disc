@@ -14,4 +14,8 @@ Para realizar este proyecto seran necesarios los siguientes requerimientos
 - Consultas y diagramas de flujo
 - 70 registros por cada tabla requerida (exceptuando las que manejen registros de trafico)
 - Una conexion con Java
-
+- Uso de procedimientos almacenados
+## Requisitos del Sistema
+- SGBD: MySQL
+- Entorno de Desarrollo:
+- Java: Para la interfaz gráfica de usuario (GUI) utilizando NetBeans.
